@@ -2,8 +2,14 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
 import content from '@/data/content.json';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import logo from '@/assets/logo.png';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 
 export const Header = () => {
   const { language, setLanguage } = useLanguage();
@@ -68,25 +74,29 @@ export const Header = () => {
               </button>
             ))}
             
-            {/* Language Switcher */}
-            <div className="flex items-center space-x-2 ml-4">
-              <Button
-                variant={language === 'en' ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => setLanguage('en')}
-                className="w-12"
-              >
-                EN
-              </Button>
-              <Button
-                variant={language === 'pt' ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => setLanguage('pt')}
-                className="w-12"
-              >
-                PT
-              </Button>
-            </div>
+            {/* Language Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1">
+                  {language === 'en' ? 'Language' : 'Idioma'}
+                  <ChevronDown size={16} />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="bg-card border-border">
+                <DropdownMenuItem 
+                  onClick={() => setLanguage('en')}
+                  className="cursor-pointer hover:bg-accent"
+                >
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem 
+                  onClick={() => setLanguage('pt')}
+                  className="cursor-pointer hover:bg-accent"
+                >
+                  Português
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,25 +123,35 @@ export const Header = () => {
                 </button>
               ))}
               
-              {/* Mobile Language Switcher */}
-              <div className="flex items-center space-x-2 pt-2">
-                <Button
-                  variant={language === 'en' ? 'default' : 'ghost'}
-                  size="sm"
-                  onClick={() => setLanguage('en')}
-                  className="flex-1"
-                >
-                  English
-                </Button>
-                <Button
-                  variant={language === 'pt' ? 'default' : 'ghost'}
-                  size="sm"
-                  onClick={() => setLanguage('pt')}
-                  className="flex-1"
-                >
-                  Português
-                </Button>
-              </div>
+              {/* Mobile Language Dropdown */}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 text-left">
+                    {language === 'en' ? 'Language' : 'Idioma'}
+                    <ChevronDown size={16} />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="bg-card border-border">
+                  <DropdownMenuItem 
+                    onClick={() => {
+                      setLanguage('en');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="cursor-pointer hover:bg-accent"
+                  >
+                    English
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    onClick={() => {
+                      setLanguage('pt');
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className="cursor-pointer hover:bg-accent"
+                  >
+                    Português
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         )}
