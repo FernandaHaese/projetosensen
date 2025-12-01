@@ -8,111 +8,113 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 15%;
+    /* Dark theme with warm orange accent - Liquid Lava palette */
+    --background: 270 14% 9%;        /* #151419 Dark Void */
+    --foreground: 0 0% 98%;          /* #FBFBFB Snow */
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
+    --card: 270 7% 11%;              /* #1B1B1E Gluon Grey */
+    --card-foreground: 0 0% 98%;     /* #FBFBFB Snow */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover: 270 7% 11%;           /* #1B1B1E Gluon Grey */
+    --popover-foreground: 0 0% 98%;  /* #FBFBFB Snow */
 
-    /* Purple theme inspired by wireframe */
-    --primary: 260 30% 50%;
-    --primary-foreground: 0 0% 100%;
+    /* Liquid Lava orange - primary brand color */
+    --primary: 23 91% 51%;           /* #F56E0F Liquid Lava */
+    --primary-foreground: 270 14% 9%; /* #151419 Dark Void text on orange */
     
-    --secondary: 260 25% 95%;
-    --secondary-foreground: 260 30% 30%;
+    --secondary: 0 0% 15%;           /* #262626 Slate Grey */
+    --secondary-foreground: 0 0% 98%; /* #FBFBFB Snow */
 
-    --muted: 260 20% 96%;
-    --muted-foreground: 240 5% 45%;
+    --muted: 270 7% 11%;             /* #1B1B1E Gluon Grey */
+    --muted-foreground: 0 0% 53%;    /* #878787 Dusty Grey */
 
-    --accent: 280 40% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 28 86% 57%;            /* #F08B33 Acento-500 */
+    --accent-foreground: 270 14% 9%; /* #151419 Dark Void */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 260 20% 90%;
-    --input: 260 20% 90%;
-    --ring: 260 30% 50%;
+    --border: 0 0% 15%;              /* #262626 Slate Grey */
+    --input: 0 0% 15%;               /* #262626 Slate Grey */
+    --ring: 28 86% 57%;              /* #F08B33 for focus states */
 
-    --radius: 0.75rem;
+    --radius: 0.875rem;              /* 14px - slightly more rounded */
     
-    /* Hero gradient background */
-    --hero-gradient: linear-gradient(135deg, hsl(260 35% 55%) 0%, hsl(280 40% 60%) 100%);
+    /* Hero gradient - warm radial inspired by references */
+    --hero-gradient: radial-gradient(800px 600px at 70% 60%, hsla(23, 91%, 51%, 0.22), transparent 60%), linear-gradient(hsl(270 14% 9%), hsl(270 14% 9%));
     
-    /* Subtle overlay for video backgrounds */
-    --video-overlay: hsla(260, 30%, 20%, 0.7);
+    /* Video overlay */
+    --video-overlay: hsla(270, 14%, 9%, 0.7);
     
-    /* Card hover shadow */
-    --card-shadow: 0 10px 30px -10px hsla(260, 30%, 30%, 0.2);
-    --card-shadow-hover: 0 20px 40px -10px hsla(260, 30%, 30%, 0.3);
+    /* Card shadows - darker and more dramatic */
+    --card-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+    --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.45);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s ease-out;
 
-    --radius: 0.75rem;
+    /* Warm off-white for light sections */
+    --soft-bg: 60 22% 82%;           /* #D8D8C9 */
+    
+    /* Orange scale for various states */
+    --brand-700: 18 85% 50%;         /* #E65416 hover/active */
+    --brand-500: 28 86% 57%;         /* #F08B33 secondary states */
+    --brand-300: 14 89% 68%;         /* #F68362 badges/soft accents */
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 270 7% 11%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 23 91% 51%;
+    --sidebar-primary-foreground: 270 14% 9%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 28 86% 57%;
   }
 
   .dark {
-    --background: 240 15% 10%;
+    /* Dark mode uses same palette since this is already a dark theme */
+    --background: 270 14% 9%;
     --foreground: 0 0% 98%;
 
-    --card: 240 15% 12%;
+    --card: 270 7% 11%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 15% 12%;
+    --popover: 270 7% 11%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 260 40% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 23 91% 51%;
+    --primary-foreground: 270 14% 9%;
 
-    --secondary: 260 15% 20%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 260 15% 18%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 270 7% 11%;
+    --muted-foreground: 0 0% 53%;
 
-    --accent: 280 50% 65%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 28 86% 57%;
+    --accent-foreground: 270 14% 9%;
 
     --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 260 15% 25%;
-    --input: 260 15% 25%;
-    --ring: 260 40% 60%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 28 86% 57%;
     
-    --hero-gradient: linear-gradient(135deg, hsl(260 40% 35%) 0%, hsl(280 45% 40%) 100%);
-    --video-overlay: hsla(260, 40%, 10%, 0.75);
-    --card-shadow: 0 10px 30px -10px hsla(260, 50%, 10%, 0.4);
-    --card-shadow-hover: 0 20px 40px -10px hsla(260, 50%, 10%, 0.5);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --hero-gradient: radial-gradient(800px 600px at 70% 60%, hsla(23, 91%, 51%, 0.22), transparent 60%), linear-gradient(hsl(270 14% 9%), hsl(270 14% 9%));
+    --video-overlay: hsla(270, 14%, 9%, 0.7);
+    --card-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+    --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.45);
+    
+    --sidebar-background: 270 7% 11%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 23 91% 51%;
+    --sidebar-primary-foreground: 270 14% 9%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 28 86% 57%;
   }
 }
 
@@ -145,6 +147,12 @@ All colors MUST be HSL.
   }
   
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-[hsl(var(--brand-500))] to-[hsl(var(--brand-300))];
+  }
+  
+  /* Focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
   }
 }
