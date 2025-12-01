@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/useLanguage';
 import content from '@/data/content.json';
 import { Menu, X } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 export const Header = () => {
   const { language, setLanguage } = useLanguage();
@@ -50,9 +51,9 @@ export const Header = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('home')}
-            className="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity"
           >
-            {content.site.name}
+            <img src={logo} alt={content.site.name} className="h-12 w-auto" />
           </button>
 
           {/* Desktop Navigation */}
