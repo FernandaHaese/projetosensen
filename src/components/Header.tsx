@@ -47,6 +47,10 @@ export const Header = () => {
     { label: content.nav.contact, id: 'contact' },
   ];
 
+  const handlePressClick = () => {
+    window.open(content.nav.pressLink, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -74,6 +78,13 @@ export const Header = () => {
                 {item.label[language]}
               </button>
             ))}
+            
+            <button
+              onClick={handlePressClick}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              {content.nav.press[language]}
+            </button>
             
             {/* Language Dropdown */}
             <DropdownMenu>
@@ -131,6 +142,13 @@ export const Header = () => {
                   {item.label[language]}
                 </button>
               ))}
+              
+              <button
+                onClick={handlePressClick}
+                className="text-foreground hover:text-primary transition-colors font-medium text-left"
+              >
+                {content.nav.press[language]}
+              </button>
               
               {/* Mobile Language Expandable Menu */}
               <div>

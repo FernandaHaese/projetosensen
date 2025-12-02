@@ -50,6 +50,14 @@ export const Footer = () => {
             >
               {content.nav.contact[language]}
             </button>
+            <a
+              href={content.nav.pressLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
+              {content.nav.press[language]}
+            </a>
           </nav>
         </div>
 
