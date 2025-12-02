@@ -42,18 +42,9 @@ export const GameCard = ({
           />
         )}
         
-        {/* Video - shown on hover (placeholder for now) */}
+        {/* Darkening effect on hover */}
         {isHovered && (
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/40 to-accent/40 flex items-center justify-center">
-            <div className="text-primary-foreground text-sm">Video Preview</div>
-          </div>
-        )}
-        
-        {/* Title Overlay on Hover */}
-        {isHovered && (
-          <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
-            <h3 className="text-2xl font-bold text-white px-4 text-center">{title}</h3>
-          </div>
+          <div className="absolute inset-0 bg-black/40" />
         )}
       </div>
 
